@@ -9,7 +9,6 @@
   export let featured = false;
   export let number = 0;
 
-
   $: amount = price.toLocaleString("sk", {
     style: "currency",
     currency: currency
@@ -43,11 +42,13 @@
 
       <div class="card-header-icon is-hidden-mobile">
         <small style="margin-right: 1rem">{weight}g</small>
-        <span class="tag is-medium is-warning">{amount}</span>
+        <span class="tag is-medium is-warning">
+          <strong>{amount}</strong>
+        </span>
       </div>
     </header>
     <div class="card-content">
-        <Toppings {toppings} />
+      <Toppings {toppings} />
     </div>
     <footer
       class="card-footer is-hidden-tablet"

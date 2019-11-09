@@ -1,22 +1,16 @@
 <script>
-  import { slide } from "svelte/transition";
+  import Topping from "./Topping.svelte";
 
   export let toppings;
 </script>
 
-<style>
-  .tag {
-    margin: 4px;
-  }
-</style>
-
-  <div class="is-mobile-only">
-    {#each toppings as topping}
-      <span class="tag">{topping}</span>
-    {/each}
-  </div>
-  <div class="content is-hidden-mobile">
-    {#each toppings as topping}
-      <span class="tag is-medium">{topping}</span>
-    {/each}
-  </div>
+<div class="is-hidden-tablet">
+  {#each toppings as topping}
+    <Topping {topping} />
+  {/each}
+</div>
+<div class="content is-hidden-mobile">
+  {#each toppings as topping}
+    <Topping medium={true} {topping} />
+  {/each}
+</div>
