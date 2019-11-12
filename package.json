@@ -9,14 +9,14 @@
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-svelte": "^4.0.4",
-    "svelte": "^3.12.1"
+    "svelte": "^3.14.0"
   },
   "browserslist": [
     "last 1 chrome versions"
   ],
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "build": "yarn clean && parcel build src/index.html",
     "clean": "rm -fr .cache dist"
   }
 }
