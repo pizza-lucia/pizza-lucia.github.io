@@ -1,11 +1,16 @@
 <script>
   import { slide } from "svelte/transition";
   import { filterToppings } from "../store.js";
+  import toppings from "../toppings.json"
 
   const rm = topping => {
     $filterToppings.delete(topping);
     filterToppings.set($filterToppings);
   };
+  function is_class(color, topping) {
+    const found = toppings.find(el => el.name === topping);
+    return found ? found.color === color : false;
+  }
 </script>
 
 <style>
@@ -34,7 +39,14 @@
     {#each Array.from($filterToppings) as topping}
       <div class="control">
         <div class="tags has-addons">
-          <i class="tag is-medium is-success">{topping}</i>
+          <i
+            class="tag is-medium"
+            class:is-info={is_class('blue', topping)}
+            class:is-success={is_class('green', topping)}
+            class:is-warning={is_class('yellow', topping)}
+            class:is-danger={is_class('red', topping)}>
+            {topping}
+          </i>
           <b class="tag is-delete is-medium" on:click={() => rm(topping)} />
         </div>
       </div>

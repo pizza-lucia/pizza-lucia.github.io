@@ -9,10 +9,13 @@
   export let featured = false;
   export let number = 0;
 
-  $: amount = price.toLocaleString("sk", {
-    style: "currency",
-    currency: currency
-  });
+  $: amount = (price / 100).toLocaleString(
+    window ? window.navigator.language : "sk",
+    {
+      style: "currency",
+      currency: currency
+    }
+  );
 </script>
 
 <style>

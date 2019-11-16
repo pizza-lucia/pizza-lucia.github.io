@@ -1,7 +1,7 @@
 [
   {
     "name": "Mateo",
-    "price": 5.6,
+    "price": 560,
     "toppings": ["par. omáčka", "syr", "šunka", "šampióny", "kukurica"],
     "weight": 780,
     "currency": "EUR",
@@ -10,7 +10,7 @@
   },
   {
     "name": "Margherita con mozzarella",
-    "price": 5.3,
+    "price": 530,
     "toppings": ["par. omáčka", "mozzarella", "paradajka", "syr"],
     "weight": 650,
     "currency": "EUR",
@@ -19,7 +19,7 @@
   },
   {
     "name": "Funghi",
-    "price": 4.8,
+    "price": 480,
     "toppings": ["par. omáčka", "syr", "šampióny"],
     "weight": 650,
     "currency": "EUR",
@@ -28,7 +28,7 @@
   },
   {
     "name": "Prosciutto",
-    "price": 4.8,
+    "price": 480,
     "toppings": ["par. omáčka", "syr", "šunka"],
     "weight": 650,
     "currency": "EUR",
@@ -37,7 +37,7 @@
   },
   {
     "name": "Prosciutto e funghi",
-    "price": 5.3,
+    "price": 530,
     "toppings": ["par. omáčka", "syr", "šunka", "šampióny"],
     "weight": 750,
     "currency": "EUR",
@@ -46,8 +46,8 @@
   },
   {
     "name": "Quattro fromaggi",
-    "price": 5.8,
-    "toppings": ["mozzarella", "eidam", "niva", "kolba"],
+    "price": 580,
+    "toppings": ["mozzarella", "eidam", "niva", "koliba"],
     "weight": 680,
     "currency": "EUR",
     "number": 6,
@@ -55,7 +55,7 @@
   },
   {
     "name": "Tono",
-    "price": 6.1,
+    "price": 610,
     "toppings": ["par. omáčka", "syr", "tuniak", "cibuľa", "olivy"],
     "weight": 730,
     "currency": "EUR",
@@ -64,7 +64,7 @@
   },
   {
     "name": "Quattro stagioni",
-    "price": 5.6,
+    "price": 560,
     "toppings": ["par. omáčka", "syr", "šunka", "slanina", "saláma", "klobása"],
     "weight": 800,
     "currency": "EUR",
@@ -73,7 +73,7 @@
   },
   {
     "name": "Quattro carne",
-    "price": 5.8,
+    "price": 580,
     "toppings": ["par. omáčka", "syr", "šunka", "slanina", "saláma", "klobása"],
     "weight": 800,
     "currency": "EUR",
@@ -82,7 +82,7 @@
   },
   {
     "name": "Toto",
-    "price": 5.6,
+    "price": 560,
     "toppings": [
       "par. omáčka",
       "syr",
@@ -98,7 +98,7 @@
   },
   {
     "name": "Rusticana",
-    "price": 5.6,
+    "price": 560,
     "toppings": [
       "par. omáčka",
       "syr",
@@ -106,7 +106,7 @@
       "olivy",
       "kukurica",
       "artičoky",
-      "syr Cottage"
+      "syr cottage"
     ],
     "weight": 850,
     "currency": "EUR",
@@ -115,7 +115,7 @@
   },
   {
     "name": "Fattoria",
-    "price": 5.6,
+    "price": 560,
     "toppings": ["par. omáčka", "syr", "šunka", "niva", "olivy"],
     "weight": 750,
     "currency": "EUR",
@@ -124,7 +124,7 @@
   },
   {
     "name": "Diavola",
-    "price": 5.6,
+    "price": 560,
     "toppings": ["par. omáčka", "syr", "saláma", "cibuľa", "feferóny"],
     "weight": 700,
     "currency": "EUR",
@@ -133,7 +133,7 @@
   },
   {
     "name": "Provinciale",
-    "price": 5.6,
+    "price": 560,
     "toppings": [
       "par. omáčka",
       "syr",
@@ -149,7 +149,7 @@
   },
   {
     "name": "Spinacia",
-    "price": 5.6,
+    "price": 560,
     "toppings": ["syr. smotana", "slanina", "cesnak", "vajce", "špenát"],
     "weight": 750,
     "currency": "EUR",
@@ -158,7 +158,7 @@
   },
   {
     "name": "Hawai",
-    "price": 5.6,
+    "price": 560,
     "toppings": ["par. omáčka", "syr", "šunka", "ananás"],
     "weight": 750,
     "currency": "EUR",
@@ -167,7 +167,7 @@
   },
   {
     "name": "Pizza Majstra Slovenska",
-    "price": 6.6,
+    "price": 660,
     "toppings": [
       "par. omáčka",
       "syr",
@@ -183,7 +183,7 @@
   },
   {
     "name": "Prosciutto crudo rucola",
-    "price": 6.6,
+    "price": 660,
     "toppings": [
       "par. omáčka",
       "syr",
@@ -199,7 +199,7 @@
   },
   {
     "name": "Družstevná",
-    "price": 5.6,
+    "price": 560,
     "toppings": [
       "par. omáčka",
       "syr",
@@ -216,7 +216,7 @@
   },
   {
     "name": "Hercules",
-    "price": 5.6,
+    "price": 560,
     "toppings": [
       "par. omáčka",
       "syr",
@@ -233,7 +233,7 @@
   },
   {
     "name": "Pizza con salami",
-    "price": 5.1,
+    "price": 510,
     "toppings": ["par. omáčka", "syr", "saláma"],
     "weight": 660,
     "currency": "EUR",
@@ -242,7 +242,7 @@
   },
   {
     "name": "Pizza France",
-    "price": 5.6,
+    "price": 560,
     "toppings": ["par. omáčka", "syr", "syr camembert", "brusnice"],
     "weight": 750,
     "currency": "EUR",
@@ -251,7 +251,7 @@
   },
   {
     "name": "Pizza Pancetta",
-    "price": 5.6,
+    "price": 560,
     "toppings": ["par. omáčka", "syr", "slanina", "cibuľa"],
     "weight": 730,
     "currency": "EUR",
@@ -260,7 +260,7 @@
   },
   {
     "name": "Pizza Štangle",
-    "price": 2.5,
+    "price": 250,
     "toppings": [],
     "weight": 300,
     "currency": "EUR",
