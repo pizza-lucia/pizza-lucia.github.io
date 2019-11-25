@@ -1,5 +1,7 @@
 <script>
+  import { formatPrice } from "../utils.js";
   import Toppings from "./Toppings.svelte";
+  import { cart } from "../store.js";
 
   export let name = "";
   export let toppings = [];
@@ -9,13 +11,12 @@
   export let featured = false;
   export let number = 0;
 
-  $: amount = (price / 100).toLocaleString(
-    window ? window.navigator.language : "sk",
-    {
-      style: "currency",
-      currency: currency
-    }
-  );
+  function addToCard() {
+    cart.update(arr => [
+      ...arr,
+      { name, toppings, weight, price, currency, featured, number }
+    ]);
+  }
 </script>
 
 <style>
@@ -31,7 +32,7 @@
 </style>
 
 <div class="card">
-  <header class="card-header">
+  <header class="card-header" on:click={() => addToCard()}>
     <p class="card-header-title">
       <span class="tag is-success" style="margin-right: 0.5rem">{number}</span>
       <span class="is-size-5">{name}</span>
@@ -43,7 +44,7 @@
     <div class="card-header-icon is-hidden-mobile">
       <small style="margin-right: 1rem">{weight}g</small>
       <span class="tag is-medium is-warning">
-        <strong>{amount}</strong>
+        <strong>{formatPrice(price, currency)}</strong>
       </span>
     </div>
   </header>
@@ -58,7 +59,9 @@
       <span class="tag is-medium">{weight}g</span>
     </div>
     <div>
-      <span class="tag is-medium is-warning">{amount}</span>
+      <span class="tag is-medium is-warning">
+        {formatPrice(price, currency)}
+      </span>
     </div>
 
   </footer>
