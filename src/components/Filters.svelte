@@ -1,23 +1,20 @@
 <script>
   import { slide } from "svelte/transition";
   import { filterToppings } from "../store.js";
-  import toppings from "../toppings.json"
+  import toppings from "../toppings.json";
 
-  const rm = topping => {
+  const remove = topping => {
     $filterToppings.delete(topping);
     filterToppings.set($filterToppings);
   };
-  function is_class(color, topping) {
+  const is_class = (color, topping) => {
     const found = toppings.find(el => el.name === topping);
     return found ? found.color === color : false;
-  }
+  };
 </script>
 
 <style>
-  .tag.is-delete {
-    cursor: pointer;
-  }
-  .topping-filter {
+  aside {
     position: sticky;
     top: 10px;
     z-index: 1;
@@ -29,12 +26,13 @@
       white 100%
     );
   }
+  .tag.is-delete {
+    cursor: pointer;
+  }
 </style>
 
 {#if $filterToppings.size !== 0}
-  <div
-    class="field is-grouped is-grouped-multiline topping-filter"
-    transition:slide>
+  <aside class="field is-grouped is-grouped-multiline" transition:slide>
 
     {#each Array.from($filterToppings) as topping}
       <div class="control">
@@ -47,10 +45,10 @@
             class:is-danger={is_class('red', topping)}>
             {topping}
           </i>
-          <b class="tag is-delete is-medium" on:click={() => rm(topping)} />
+          <b class="tag is-delete is-medium" on:click={() => remove(topping)} />
         </div>
       </div>
     {/each}
 
-  </div>
+  </aside>
 {/if}

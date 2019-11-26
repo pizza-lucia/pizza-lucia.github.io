@@ -3,36 +3,28 @@
   import { fade } from "svelte/transition";
   import { flip } from "svelte/animate";
   import { tweened } from "svelte/motion";
-  import Filters from "./Filters.svelte";
-  import Cart from "./Cart.svelte";
   import Pizza from "./Pizza.svelte";
-  import pizzas from "../pizzas.json";
-  import { filterToppings, filteredPizzas, cart } from "../store.js";
+  import { filterToppings, filteredPizzas } from "../store.js";
 
-  function containAll(set, subset) {
-    return Array.from(subset).every(elem => set.has(elem));
-  }
+  export let pizzas;
 
-  function updatePizzas(toppings) {
-    $filteredPizzas = pizzas.filter(pizza => {
-      if ($filterToppings.size === 0) return true;
-      return containAll(new Set(pizza.toppings), $filterToppings);
-    });
-  }
+  const containAll = (set, subset) =>
+    Array.from(subset).every(elem => set.has(elem));
 
-  $: updatePizzas($filterToppings);
+  $: filteredPizzas.set(
+    $filterToppings.size === 0
+      ? pizzas
+      : pizzas.filter(pizza =>
+          containAll(new Set(pizza.toppings), $filterToppings)
+        )
+  );
 </script>
 
-<Filters />
-
 <section class="columns">
-  {#if $cart.length > 0}
-    <div class="column is-one-third">
-      <Cart />
-    </div>
-  {/if}
+  <!-- Reserved for Cart component -->
+  <slot />
 
-  <div class="column is-two-third">
+  <div class="column">
     <ul class="columns is-multiline is-desktop">
       {#each $filteredPizzas as pizza (pizza.number)}
         <li

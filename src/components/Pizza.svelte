@@ -12,8 +12,8 @@
   export let number = 0;
 
   function addToCard() {
-    cart.update(arr => [
-      ...arr,
+    cart.update(pizzas => [
+      ...pizzas,
       { name, toppings, weight, price, currency, featured, number }
     ]);
   }
@@ -32,7 +32,7 @@
 </style>
 
 <div class="card">
-  <header class="card-header" on:click={() => addToCard()}>
+  <header class="card-header">
     <p class="card-header-title">
       <span class="tag is-success" style="margin-right: 0.5rem">{number}</span>
       <span class="is-size-5">{name}</span>
@@ -41,11 +41,19 @@
       {/if}
     </p>
 
-    <div class="card-header-icon is-hidden-mobile">
-      <small style="margin-right: 1rem">{weight}g</small>
-      <span class="tag is-medium is-warning">
-        <strong>{formatPrice(price, currency)}</strong>
+    <div class="card-header-icon">
+      <span class="is-hidden-mobile">
+        <small style="margin-right: 1rem">{weight}g</small>
+        <span class="tag is-medium is-warning">
+          <strong>{formatPrice(price, currency)}</strong>
+        </span>
+        &nbsp;
       </span>
+      <button class="button is-small" on:click={() => addToCard()}>
+        <span class="icon">
+          <i class="fas fa-lg fa-plus" />
+        </span>
+      </button>
     </div>
   </header>
   <div class="card-content">
