@@ -8,8 +8,7 @@
 
   export let pizzas;
 
-  const containAll = (set, subset) =>
-    Array.from(subset).every(elem => set.has(elem));
+  const containAll = (set, subset) => Array.from(subset).every(elem => set.has(elem));
 
   $: filteredPizzas.set(
     $filterToppings.size === 0
@@ -21,8 +20,8 @@
 </script>
 
 <section class="columns">
-  <!-- Reserved for Cart component -->
-  <slot />
+
+  <slot /> <!-- Reserved for Cart component -->
 
   <div class="column">
     <ul class="columns is-multiline is-desktop">
@@ -36,4 +35,5 @@
       {/each}
     </ul>
   </div>
+
 </section>

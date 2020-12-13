@@ -7,16 +7,17 @@
   "author": "Baptiste Darthenay <baptiste.darthenay@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "parcel": "^1.12.4",
-    "parcel-plugin-svelte": "^4.0.5",
-    "svelte": "^3.15.0"
+    "parcel": "^2.0.0-beta.1",
+    "parcel-plugin-svelte": "^4.0.6",
+    "parcel-transformer-svelte": "^1.0.8",
+    "svelte": "^3.31.0"
   },
   "browserslist": [
-    "last 1 chrome versions"
+    "last 2 firefox versions"
   ],
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "yarn clean && parcel build src/index.html",
-    "clean": "rm -fr .cache dist"
+    "dev": "yarn clean; parcel src/index.html",
+    "build": "yarn clean; parcel build src/index.html",
+    "clean": "rm -fr .parcel-cache dist"
   }
 }
