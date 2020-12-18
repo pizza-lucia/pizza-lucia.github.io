@@ -2,7 +2,6 @@
   "name": "pizza-lucia-svinna",
   "version": "1.0.0",
   "description": "Non official website for Pizza Lucia",
-  "main": "index.js",
   "repository": "git@github.com:pizza-lucia/website.git",
   "author": "Baptiste Darthenay <baptiste.darthenay@gmail.com>",
   "license": "MIT",

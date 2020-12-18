@@ -17,7 +17,7 @@
       }
       return counts;
     }, Array())
-    .sort((a, b) => a.pizza.number > b.pizza.number);
+    .sort((a, b) => a.pizza.position > b.pizza.position);
 
   $: total = formatPrice(
     $cart.reduce((amount, pizza) => amount + pizza.price, 0)

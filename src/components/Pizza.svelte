@@ -1,20 +1,21 @@
 <script>
   import { formatPrice } from "../utils.js";
   import Toppings from "./Toppings.svelte";
+  import Allergens from "./Allergens.svelte";
   import { cart } from "../store.js";
 
   export let name = "";
-  export let toppings = [];
-  export let weight = 0;
+  export let position = 0;
   export let price = 0.0;
-  export let currency = "EUR";
-  export let featured = false;
-  export let number = 0;
+  export let weight = 0;
+  export let toppings = [];
+  export let allergens = [];
+  let currency = "EUR";
 
   function addToCard() {
     cart.update(pizzas => [
       ...pizzas,
-      { name, toppings, weight, price, currency, featured, number }
+      { name, position, price, weight, toppings, allergens }
     ]);
   }
 </script>
@@ -34,11 +35,8 @@
 <div class="card">
   <header class="card-header">
     <p class="card-header-title">
-      <span class="tag is-success" style="margin-right: 0.5rem">{number}</span>
+      <span class="tag is-success" style="margin-right: 0.5rem">{position}</span>
       <span class="is-size-5">{name}</span>
-      {#if featured}
-        <span class="tag is-warning" style="margin-left: 1rem">Novinky</span>
-      {/if}
     </p>
 
     <div class="card-header-icon">
@@ -59,13 +57,18 @@
   <div class="card-content">
     <Toppings {toppings} />
   </div>
+  <footer class="card-footer is-hidden-mobile"
+    style="justify-content: flex-end; border-top:0; margin-top: -1.5rem;">
+      <Allergens {allergens} />
+  </footer>
   <footer
     class="card-footer is-hidden-tablet"
-    style="justify-content: space-around">
+    style="justify-content: space-around; align-items: baseline;">
 
     <div>
       <span class="tag is-medium">{weight}g</span>
     </div>
+    <Allergens {allergens} />
     <div>
       <span class="tag is-medium is-warning">
         {formatPrice(price, currency)}

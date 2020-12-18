@@ -19,21 +19,15 @@
   );
 </script>
 
-<section class="columns">
+<slot /> <!-- Reserved for Cart component -->
 
-  <slot /> <!-- Reserved for Cart component -->
-
-  <div class="column">
-    <ul class="columns is-multiline is-desktop">
-      {#each $filteredPizzas as pizza (pizza.number)}
-        <li
-          class="column is-half"
-          transition:fade
-          animate:flip={{ duration: 400 }}>
-          <Pizza {...pizza} />
-        </li>
-      {/each}
-    </ul>
-  </div>
-
-</section>
+<ul class="columns is-multiline is-desktop">
+  {#each $filteredPizzas as pizza (pizza.position)}
+    <li
+      class="column is-half"
+      transition:fade
+      animate:flip={{ duration: 400 }}>
+      <Pizza {...pizza} />
+    </li>
+  {/each}
+</ul>
